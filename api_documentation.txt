@@ -1,0 +1,50 @@
+1)  Endpoint: /add
+    Action: uploads all data pertaining to the chosen paper to be stored in DB
+    Request format: 
+    {
+        "username": "Zeeshan",
+        "title": "NLP",
+        "summary": "This is a research paper on NLP",
+        "questions": ["What is NLP?", "How to learn NLP?"],
+        "answers": ["Answer1", "Answer2"],
+        "content": "This is the entire paper",
+        "recommendations": ["link1", "link2", "link3"]
+
+    }
+    Response format:
+            {
+                “Status”: “success”
+            }
+
+
+
+2)  Endpoint: /get
+    Action: returns all the required info to display web-page(2) for one research paper
+    Request format: 
+    {
+        "username": "Zeeshan",
+        "title": "NLP",
+    }
+    Response format:
+            {
+                "summary": "This is a research paper on NLP",
+        "questions": ["What is NLP?", "How to learn NLP?"],
+        "answers": ["Answer1", "Answer2"],
+        "content": "This is the entire paper",
+            "recommendations": ["link1", "link2", "link3"]
+            }
+
+
+
+3) Endpoint: /delete
+
+    Action: Deletes the provided paper from DB
+    Request format: 
+    {
+        "username": "Zeeshan",
+        "title": "NLP",
+    }
+    Response format:
+            {
+                “Status”: “success”
+            }
