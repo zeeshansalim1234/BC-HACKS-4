@@ -10,6 +10,10 @@ initialize_app(cred)
 db = firestore.client()
 #user_Ref = db.collection('research')
 
+@app.route('/', methods = ['GET'])
+def home():
+
+    return jsonify({'message': "Hello World"}), 200
 
 @app.route('/add', methods = ['POST'])
 def add():
