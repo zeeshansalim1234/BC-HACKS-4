@@ -15,7 +15,6 @@ db = firestore.client()
 def add():
 
     # endpoint can be used to ADD or EDIT records to Firebase
-    # Pass it a username as an get argument
 
     username = request.json['username']
     summary = request.json['summary']
@@ -28,34 +27,38 @@ def add():
     try:
         input = {'Title': title, 'Content': content, 'Summary': summary, "Questions": questions, "Answers": answers, "Recommendations": recommendations}
         db.collection(str(username)).document(str(title)).set(input)
+        return jsonify({'status': "success"}), 200
     except Exception as e:
         return f"An Error Occured: {e}"
+    
 
 
 @app.route('/get', methods = ['GET'])
 def get():
 
-    # Pass it a username as an get argument
-
-    username = request.json['username']
-    summary = request.json['summary']
-    questions = request.json['questions']
-    answers = request.json['answers']
-    recommendations = request.json['recommendations']
-    content = request.json['content']
-    title = request.json['title']
+    username = request.args.get('username')
+    myTitle = request.args.get('title')
 
     try:
-        input = {'Title': title, 'Content': content, 'Summary': summary, "Questions": questions, "Answers": answers, "Recommendations": recommendations}
-        db.collection(str(username)).document(str(title)).set(input)
+        result = db.collection(username).document(myTitle).get()
+        if result.exists:
+            return jsonify(result.to_dict()), 200
+                
     except Exception as e:
         return f"An Error Occured: {e}"
 
 @app.route('/delete', methods = ['DELETE'])
 def delete():
 
-    pass
+    username = request.args.get('username')
+    myTitle = request.args.get('title')
 
+    try:
+        result = db.collection(username).document(myTitle).delete()
+        return jsonify({'status': "success"}), 200
+                
+    except Exception as e:
+        return f"An Error Occured: {e}"
 
 if __name__ == "__main__":
     app.run(debug=True)
