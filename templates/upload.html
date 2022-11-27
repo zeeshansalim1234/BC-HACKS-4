@@ -60,17 +60,19 @@
 
 <div class="row-card">
   {% for link in links1%}
-  <div class="column-card">
-    <div class="search-card"><iframe width="320" height="475" src={{link}}  frameborder="0"  allowfullscreen></iframe></div>
-  </div>
+  <a href="http://127.0.0.1:5000/paperResults">
+    <div class="column-card">
+      <div class="search-card"><iframe width="320" height="475" src={{link}}  frameborder="0"  allowfullscreen></iframe></div>
+    </div>
+  </a>
   {% endfor %}
 
   <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 
   {% for link in links2%}
-  <div class="column-card">
-    <div class="search-card"><iframe width="320" height="475" src={{link}} frameborder="0"  allowfullscreen></iframe></div>
-  </div>
+    <div class="column-card">
+      <div class="search-card"><a href="http://127.0.0.1:5000/paperResults"><iframe width="320" height="475" src={{link}} frameborder="0"  allowfullscreen></iframe></a></div>
+    </div>
   {% endfor %}
  
 </div>

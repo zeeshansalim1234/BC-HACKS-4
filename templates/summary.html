@@ -143,15 +143,11 @@
 
     <br><br>
     <div class="row-card">
-      <div class="column-card">
-        <div class="search-card"><iframe width="500" height="700" src="https://aclanthology.org/D18-1291v2.pdf"  frameborder="0"  allowfullscreen></iframe></div>
-      </div>
-      <div class="column-card">
-        <div class="search-card"><iframe width="500" height="700" src="https://aclanthology.org/D18-1291v2.pdf"  frameborder="0"  allowfullscreen></iframe></div>
-      </div>
-      <div class="column-card">
-        <div class="search-card"><iframe width="500" height="700" src="https://aclanthology.org/D18-1291v2.pdf"  frameborder="0"  allowfullscreen></iframe></div>
-      </div>
+      {% for link in links%}
+        <div class="column-card">
+          <div class="search-card"><iframe width="500" height="700" src={{link}}  frameborder="0"  allowfullscreen></iframe></div>
+        </div>
+      {% endfor %}
     </div>
     <br><br><br>
 

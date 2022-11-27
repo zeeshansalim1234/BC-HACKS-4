@@ -37,6 +37,11 @@ def searchPapers():
 def summaryPage():
     return render_template('summary.html')
 
+@app.route('/paperResults',  methods = ['GET'])
+def paperResults():
+    links = ["http://aclweb.org/anthology/D18-1291.pdf", "http://aclweb.org/anthology/D18-1047.pdf", "http://aclweb.org/anthology/D18-1059.pdf"]
+    return render_template('summary.html', links = links)
+
 @app.route('/dashboardPage',  methods = ['GET'])
 def dashboard():
     return render_template('dashboard.html')
