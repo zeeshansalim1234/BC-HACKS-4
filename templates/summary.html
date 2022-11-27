@@ -7,6 +7,8 @@
   <link href="../static/css/style.css" rel="stylesheet" type="text/css" />
   <script src="../static/js/tf_jax_jsCoreV2.js"> </script>
   <script src="../static/js/tf_answerModule_JAXexport.js"> </script>
+  <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs"> </script>
+  <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/qna"> </script>
 </head>
 
 <body style="background-color:#FAFAFA">
@@ -62,7 +64,7 @@
                   Scientists and astronomers have been studying our solar system for centuries and then after they will findings are quite interesting. Various planets that form a part of our solar system have their own unique geological features and all are different from each other in several ways.
                   
                   </p>
-                <span id="answer" class="text-muted"></span>
+                <span id="answer6" class="text-muted"></span>
             </div>
         </div>
       </div>
@@ -79,7 +81,7 @@
               <p>
                 {{ summary }}
               </p>
-              <span id="answer" class="text-muted"></span>
+              <span id="answer5" class="text-muted"></span>
           </div>
       </div>
       {% endif %}
@@ -111,7 +113,7 @@
             <p>
               {{ content }}
             </p>
-            <span id="answer" class="text-muted"></span>
+            <span id="answer3" class="text-muted"></span>
         </div>
     </div>
     {% endif %}
@@ -124,10 +126,18 @@
 
             <div class="input-group mb-3 mt-3" >
                 <input type="text" class="inppx form-control" placeholder="Enter your question ..." id="question">
-                <button id="button" class="submit">
+                <button id="button" class="submitz">
                     Submit
                 </button>
             </div>
+
+            <div class="card mb-3">
+              <div class="card-body">
+                  <h5 class="card-title">Answer</h5>
+                  <span id="answer" class="text-muted"></span>
+              </div>
+            </div>
+              
         </div>
         <div class="card mb-3">
             <div class="card-body">
@@ -136,7 +146,7 @@
                 
                 <h5 class="card-title">Answer</h5>
                 <p> Uranus is the seventh planet from the Sun. It is the lightest of all the giant and outer planets.</p>
-                <span id="answer" class="text-muted"></span>
+                <span id="answer1" class="text-muted"></span>
             </div>
         </div>
         <div class="card mb-3">
@@ -146,17 +156,15 @@
            
               <h5 class="card-title">Answer</h5>
               <p> Uranus is the seventh planet from the Sun. It is the lightest of all the giant and outer planets.</p>
-              <span id="answer" class="text-muted"></span>
+              <span id="answer2" class="text-muted"></span>
           </div>
       </div>
       </div>
 
 
     </div>
-    <script src="convertedScripts/jax_pytorchOut_core.js"></script>
-    <script src="convertedScripts/jax_AnswerQ_Out_core.js"></script>
 
-    <h1 style="lead">Here are similar research articles</h1>
+    <h1 style="padding-left: 30px; padding-top: 50px;">Here are similar research articles</h1>
 
     <br><br>
     <div class="row-card">
