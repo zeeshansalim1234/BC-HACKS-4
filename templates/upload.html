@@ -15,7 +15,7 @@
         <a class="p-2 text-light" href="http://127.0.0.1:5000/">Home</a>
         <a class="p-2 text-light" href="http://127.0.0.1:5000/uploadPage">Upload</a>
         <a class="p-2 text-light" href="http://127.0.0.1:5000/summaryPage">Summary</a>
-        <a class="p-2 text-light" href="http://127.0.0.1:5000/signUpPage">Account</a>
+        <a class="p-2 text-light" href="http://127.0.0.1:5000/signUpPage">Sign Up</a>
         
       </nav>
       
@@ -32,7 +32,7 @@
         <label for="input_file"></label><br/>
         <input type="file" id="input_file" name="input_file">
         <p class="py-2">Drag your files here or click in this area.</p>
-        <br> <button id="fullbtn" type="submit">Upload</button>
+        <br> <button onclick="window.location.href = 'searchPapers';" id="fullbtn" type="button">Upload</button>
       </form>
           </div>
            <div class="col-lg-5 order-1 order-lg-2 feat-img" data-aos="zoom-out">
@@ -52,34 +52,26 @@
   <input type="search" id="query" name="q"
    placeholder="Search..."
    aria-label="Search through site content">
-  <button><svg viewBox="0 0 1024 1024"><path class="path1" d="M848.471 928l-263.059-263.059c-48.941 36.706-110.118 55.059-177.412 55.059-171.294 0-312-140.706-312-312s140.706-312 312-312c171.294 0 312 140.706 312 312 0 67.294-24.471 128.471-55.059 177.412l263.059 263.059-79.529 79.529zM189.623 408.078c0 121.364 97.091 218.455 218.455 218.455s218.455-97.091 218.455-218.455c0-121.364-103.159-218.455-218.455-218.455-121.364 0-218.455 97.091-218.455 218.455z"></path></svg></button>
+  <button onclick="window.location.href = 'searchPapers';" type="button"><svg viewBox="0 0 1024 1024"><path class="path1" d="M848.471 928l-263.059-263.059c-48.941 36.706-110.118 55.059-177.412 55.059-171.294 0-312-140.706-312-312s140.706-312 312-312c171.294 0 312 140.706 312 312 0 67.294-24.471 128.471-55.059 177.412l263.059 263.059-79.529 79.529zM189.623 408.078c0 121.364 97.091 218.455 218.455 218.455s218.455-97.091 218.455-218.455c0-121.364-103.159-218.455-218.455-218.455-121.364 0-218.455 97.091-218.455 218.455z"></path></svg></button>
 </form>
 
 <br> <br>
 
 <div class="row-card">
+  {% for link in links1%}
   <div class="column-card">
-    <div class="search-card"><iframe width="320" height="475" src="https://aclanthology.org/D18-1291v2.pdf"  frameborder="0"  allowfullscreen></iframe></div>
+    <div class="search-card"><iframe width="320" height="475" src={{link}}  frameborder="0"  allowfullscreen></iframe></div>
   </div>
-  <div class="column-card">
-    <div class="search-card"><iframe width="320" height="475" src="https://aclanthology.org/D18-1291v2.pdf"  frameborder="0"  allowfullscreen></iframe></div>
-  </div>
-  <div class="column-card">
-    <div class="search-card"><iframe width="320" height="475" src="https://aclanthology.org/D18-1291v2.pdf"  frameborder="0"  allowfullscreen></iframe></div>
-  </div>
+  {% endfor %}
 
   <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+  {% for link in links2%}
   <div class="column-card">
-    <div class="search-card"><iframe width="320" height="475" src="https://aclanthology.org/D18-1291v2.pdf"  frameborder="0"  allowfullscreen></iframe></div>
+    <div class="search-card"><iframe width="320" height="475" src={{link}} frameborder="0"  allowfullscreen></iframe></div>
   </div>
-  <div class="column-card">
-    <div class="search-card"><iframe width="320" height="475" src="https://aclanthology.org/D18-1291v2.pdf"  frameborder="0"  allowfullscreen></iframe></div>
-  </div>
-  <div class="column-card">
-    <div class="search-card"><iframe width="320" height="475" src="https://aclanthology.org/D18-1291v2.pdf"  frameborder="0"  allowfullscreen></iframe></div>
-  </div>
-  
-  
+  {% endfor %}
+ 
 </div>
         
        

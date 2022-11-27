@@ -27,6 +27,12 @@ def signUpPage():
 def upload():
     return render_template('upload.html')
 
+@app.route('/searchPapers',  methods = ['GET'])
+def searchPapers():
+    links1 = ["http://aclweb.org/anthology/D18-1291.pdf", "http://aclweb.org/anthology/D18-1047.pdf", "http://aclweb.org/anthology/D18-1059.pdf"]
+    links2 = ["http://aclweb.org/anthology/D18-1344.pdf", "http://aclweb.org/anthology/D16-1071.pdf", "http://aclweb.org/anthology/D18-1482.pdf"]
+    return render_template('upload.html', links1 = links1, links2 = links2)
+
 @app.route('/summaryPage',  methods = ['GET'])
 def summaryPage():
     return render_template('summary.html')
