@@ -23,7 +23,7 @@ No matter what career field you’re in or how high up you are, **there’s alwa
 ## What it does 🤔
 Insightly is a **productive tool** that is used to efficiently *examine research papers*, without needing to read through the entire paper. It streamlines easy access to published papers and significantly reduces researching time. With this platform, the user can: 
 
-![image](https://user-images.githubusercontent.com/48355572/204152267-bdeb675f-9384-4361-b4f8-e0ec9c9b9927.png)
+![image](https://user-images.githubusercontent.com/48355572/204158565-c7075f98-544a-4148-8541-28153ad3c886.png)
 
 - View summaries of the research paper(s)
 - Find tagged topic headers for the paper
@@ -35,7 +35,7 @@ Insightly is a **productive tool** that is used to efficiently *examine research
 ## How we built it ⚙️
 **Insightly** is crafted with 💙. We went with a minimalist approach by building the front-end with *HTM*L, *CSS* & *Vanilla Javascript*. After OAuth-ing with *Firebase*, we land on the homepage, where we can leverage a bunch of useful tools according to our needs. 
 
-![image](https://user-images.githubusercontent.com/48355572/204152850-6703dea5-a553-4ba9-b13d-00d2d0f9aea7.png)
+![image](https://user-images.githubusercontent.com/48355572/204158502-d889091b-7345-47d9-b16c-7d2e982e9b30.png)
 
 
 We can upload our own pdf document or can search through papers available on ArXiv or via custom URL. Once we do that we have the option to generate total or partial summary of the selected which is powered by our own Custom Trained Superfast Machine Learning model. Moreover, we can also analyze the sentiment of the same if we require. Furthermore, using *BigBERT* we are also able to resolve any sort of questions taken as an input promt to return accurate answers. The backing is running on splitted pipelines of *Pytorch* with *OnnX*. And last but not least, all these datas shall be stored in the user dashboard utilizing which, the machine can automatically recommend more similar papers via *cosine similarity*.
