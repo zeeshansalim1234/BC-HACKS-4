@@ -23,6 +23,22 @@ def home():
 def signUpPage():
     return render_template('account.html')
 
+@app.route('/uploadPage',  methods = ['POST'])
+def upload():
+    return render_template('upload.html')
+
+@app.route('/summaryPage',  methods = ['POST'])
+def summaryPage():
+    return render_template('summaryPage.html')
+
+@app.route('/dashboardPage',  methods = ['GET'])
+def dashboard():
+    return render_template('dashboard.html')
+
+@app.route('/login', methods = ['GET'])
+def login():
+    return render_template('upload.html')
+
 @app.route('/tags', methods = ['POST'])
 def tags():
 
