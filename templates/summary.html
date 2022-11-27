@@ -95,7 +95,7 @@
               <button onclick="window.location.href = 'getSummary';" type="button" style = "border-radius: 15px; float: right;">Full Paper</button> 
               <br> <br>  
 
-              <textarea id="inp" class="form-control" placeholder="Enter Text ..."></textarea> 
+              <textarea id="inp" class="form-control" placeholder="Enter Text ..." style="border-radius: 15px;"></textarea> 
               <br> 
               <button class="submit" id="button" style = "border-radius: 15px; margin-bottom: 20px;">Summarize</button>           
               
@@ -108,7 +108,7 @@
       {% if title %}
       <div style class="card mb-3">
         <div class="card-body">
-            <h5 class="card-title">{{ title }}</h5>
+            <h5 class="card-title">{{ title }} - (Definition)</h5>
             <br>
             <p>
               {{ content }}
@@ -129,8 +129,8 @@
             <h5 class="card-title" style="display:inline">ASK ME</h5> 
             <br><br>
             <div class="input-group mb-3 mt-3" >
-                <input type="text" class="inppx form-control" placeholder="Enter your question ..." id="question">
-                <button id="button" onclick="window.location.href = 'question';" class="submitz" >
+                <input type="text" class="inppx form-control" placeholder="Enter your question ..." id="question" style="border-radius: 20px;">
+                <button id="button" onclick="window.location.href = 'question';" class="submitz" style="border-radius: 20px; margin-left: 5px;">
                     Submit
                 </button>
             </div>
