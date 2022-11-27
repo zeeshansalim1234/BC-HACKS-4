@@ -1,0 +1,152 @@
+body{
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.main_container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-top: 5px;
+    letter-spacing: 1px;
+}
+
+.title_wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-top: 50px;
+    letter-spacing: 1px;
+    font-size: 16px;
+}
+.title_wrapper img{
+    -webkit-user-drag: none;
+    width: 125px;
+    margin-bottom: 20px;
+    user-select: none;
+}
+
+#inp{
+    width: 85%;
+    padding: 10px;
+    margin-top: 20px;
+    border: 1px solid rgba(211, 211, 211, 0.719);
+    height: 150px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    overflow-y: auto;
+    resize: none;
+    outline: none;
+    border-radius: 5px;
+    font-size: 16px;
+    color: grey;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    transition: .6s;
+}
+#inp:focus{
+    color: black;
+    border: 1px solid rgb(0, 162, 255);
+}
+#inp::-webkit-scrollbar{
+    display: none;
+}
+
+
+.inppx{
+    width: 85%;
+    padding: 10px;
+    margin-top: 20px;
+    border: 1px solid rgba(211, 211, 211, 0.719);
+    height: 20px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    overflow-y: auto;
+    resize: none;
+    outline: none;
+    border-radius: 5px;
+    font-size: 16px;
+    color: grey;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    transition: .6s;
+}
+.inppx:focus{
+    color: black;
+    border: 1px solid rgb(0, 162, 255);
+}
+.inppx::-webkit-scrollbar{
+    display: none;
+}
+
+
+.submit{
+    margin-top: 15px;
+    width: 150px;
+    height: 30px;
+    padding: 5px;
+    border: 1px solid lightgray;
+    border-radius: 5px;
+    color: grey;
+    outline: none;
+    cursor: pointer;
+    transition: .6s;
+}
+.submit:hover{
+    color: black;
+    border: 1px solid rgb(0, 81, 255);
+}
+
+
+.submitz{
+    margin-top: 15px;
+    width: 150px;
+    height: 30px;
+    padding: 5px;
+    border: 1px solid lightgray;
+    border-radius: 5px;
+    color: grey;
+    outline: none;
+    cursor: pointer;
+    transition: .6s;
+}
+.submitz:hover{
+    color: black;
+    border: 1px solid rgb(0, 81, 255);
+}
+
+.msg_board{
+    margin-top: 20px;
+    font-size: 15px;
+    border: none;
+    width: 300px;
+    text-align: center;
+    height: fit-content;
+    transition: .6s;
+}
+
+.hidden{
+    opacity: 0%;
+    transition: .6s;
+}
+
+.removed{
+    display: none;
+}
+
+.creds{
+    margin-top: 20px;
+    font-size: 15px;
+    border: none;
+    width: fit-content;
+    text-align: center;
+    height: fit-content;
+    transition: .6s;
+    line-height: 30px;
+    color: grey;
+    transition: .6s;
+}
+.creds a{
+    text-decoration: none;
+    color: rgba(0, 81, 255, 0.603);
+}

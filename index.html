@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JAX_BB_SummTFX</title>
+    <link href="style.css" rel="stylesheet" type="text/css">
+    <script src="convertedScripts/tf_jax_jsCoreV2.js"> </script>
+    <script src="convertedScripts/tf_answerModule_JAXexport.js"> </script>
+</head>
+
+<body>
+    <div class="main_container">
+        <div class="title_wrapper">
+            <img src="https://avatars.githubusercontent.com/u/48355572?v=4">
+            <h1>Slower than Light tho :p</h1>
+        </div>
+        
+        <div class="form">
+        <textarea id="inp" class="form-control" placeholder="Enter Text ..."></textarea>
+        <button class="submit">Summarize</button>
+        <div class="msg_board"></div>
+
+            <div class="input-group mb-3 mt-3" >
+                <input type="text" class="inppx form-control" placeholder="Enter your question ..." id="question">
+                <button id="button" class="submitz">
+                    Submit
+                </button>
+            </div>
+        </div>
+        <div class="card mb-3">
+            <div class="card-body">
+                <h5 class="card-title">Answer</h5>
+                <span id="answer" class="text-muted"></span>
+            </div>
+        </div>
+
+
+    </div>
+    <script src="convertedScripts/jax_pytorchOut_core.js"></script>
+    <script src="convertedScripts/jax_AnswerQ_Out_core.js"></script>
+</body>
+
+</html>
