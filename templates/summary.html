@@ -67,20 +67,38 @@
         </div>
       </div>
 
+    
+
       <div class="column">
+
+        {% if summary %}
+        <div style class="card mb-3">
+          <div class="card-body">
+              <h5 class="card-title">Overall Summary</h5>
+              <br>
+              <p>
+                {{ summary }}
+              </p>
+              <span id="answer" class="text-muted"></span>
+          </div>
+      </div>
+      {% endif %}
+
+
+
         <div style class="card mb-3">
           <div class="card-body">
               <h5 class="card-title" style="display:inline">Summarize</h5> 
               &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-              <button class="submit" id="button" style = "border-radius: 15px;">Full Paper</button> 
+              <button onclick="window.location.href = 'getSummary';" type="button" style = "border-radius: 15px;">Full Paper</button> 
               <br> <br>  
 
               <textarea id="inp" class="form-control" placeholder="Enter Text ..."></textarea> 
               <br> 
-              <button class="submit" id="button" style = "border-radius: 15px;">Summarize</button>           
+              <button class="submit" id="button" style = "border-radius: 15px; margin-bottom: 20px;">Summarize</button>           
               
-
-              <span id="answer" class="text-muted"></span>
+              <div class="msg_board"></div>
+              <!-- <span id="answer" class="text-muted"></span> -->
           </div>
       </div>
 
@@ -103,8 +121,6 @@
 
       <div class="column">
  <div class="form">
-        
-        <div class="msg_board"></div>
 
             <div class="input-group mb-3 mt-3" >
                 <input type="text" class="inppx form-control" placeholder="Enter your question ..." id="question">
