@@ -124,20 +124,26 @@
       <div class="column">
  <div class="form">
 
+        <div class="card mb-3">
+          <div class="card-body">
+            <h5 class="card-title" style="display:inline">ASK ME</h5> 
+            <br><br>
             <div class="input-group mb-3 mt-3" >
                 <input type="text" class="inppx form-control" placeholder="Enter your question ..." id="question">
                 <button id="button" onclick="window.location.href = 'question';" class="submitz" >
                     Submit
                 </button>
             </div>
+        </div>
+      </div>
 
-            <div class="card mb-3">
+            <!-- <div class="card mb-3">
               <div class="card-body">
                   <h5 class="card-title">ANSWER</h5>
                   <span id="answer" class="text-muted"></span>
               </div>
             </div>
-              
+               -->
         </div>
         
         {% for question,answer in question_answers %}
@@ -158,7 +164,7 @@
 
     </div>
 
-    <h1 style="padding-left: 30px; padding-top: 50px;">Here are similar research articles</h1>
+    <h1 style="padding-left: 30px; padding-top: 50px; text-align: center;">SIMILAR PAPERS</h1>
 
     <br><br>
     <div class="row-card">
