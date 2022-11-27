@@ -1,6 +1,10 @@
 from firebase_admin import credentials, initialize_app, firestore
 from flask import Flask, Blueprint, request, jsonify, render_template, redirect, url_for
 from flask_cors import CORS
+import pickle
+import json
+import torch
+from sentence_transformers import SentenceTransformer, util
 
 app = Flask(__name__)
 CORS(app)
@@ -14,6 +18,35 @@ db = firestore.client()
 def home():
 
     return jsonify({'message': "Hello World"}), 200
+
+
+@app.route('/recommendations', methods = ['POST'])
+def recommendations():
+
+    #model = SentenceTransformer('allenai-specter')
+
+    title = request.json['title']
+    abstract = request.json['summary']
+
+    with open("model.sav", "rb") as f:
+        model = pickle.load(f)
+    
+    with open("papers.json") as fin:
+        papers = json.load(fin)
+
+    corpus_embeddings = torch.load('tensor_research_papers.pt')  # 974 paper embeddings
+
+    query_embedding = model.encode(title+'[SEP]'+abstract, convert_to_tensor=True)
+    search_hits = util.semantic_search(query_embedding, corpus_embeddings)
+    search_hits = search_hits[0]  # Get the hits for the first query
+    result = []
+
+    for hit in search_hits:
+
+        related_paper = papers[hit['corpus_id']]
+        result.append({'title': related_paper['title'], 'abstract': related_paper['abstract'], 'url': related_paper['url'], 'score': hit['score']})
+
+    return jsonify(result), 200
 
 @app.route('/add', methods = ['POST'])
 def add():
