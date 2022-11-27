@@ -23,7 +23,13 @@
   </div>
 
   <main>
-    
+     <div style class="card mb-3">
+            <div class="card-body">
+                <h5 class="card-title">Original Doc</h5>
+                <span id="answer" class="text-muted"></span>
+            </div>
+        </div>
+
  <div class="form">
         <textarea id="inp" class="form-control" placeholder="Enter Text ..."></textarea>
         <button class="submit">Summarize</button>
@@ -31,7 +37,7 @@
 
             <div class="input-group mb-3 mt-3" >
                 <input type="text" class="inppx form-control" placeholder="Enter your question ..." id="question">
-                <button id="button" class="submitz">
+                <button id="button" class="submit">
                     Submit
                 </button>
             </div>
@@ -47,7 +53,9 @@
     </div>
     <script src="convertedScripts/jax_pytorchOut_core.js"></script>
     <script src="convertedScripts/jax_AnswerQ_Out_core.js"></script>
-    
+
+    <h1 style="lead">Here are similar research articles</h1>
+    <br>
   </main>
   <footer class="footer">
     <div class="container">
