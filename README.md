@@ -40,7 +40,7 @@ Insightly is a **productive tool** that is used to efficiently *examine research
 
 We can upload our own pdf document or can search through papers available on ArXiv or via custom URL. Once we do that we have the option to generate total or partial summary of the selected which is powered by our own Custom Trained Superfast Machine Learning model. Moreover, we can also analyze the sentiment of the same if we require. Furthermore, using *BigBERT* we are also able to resolve any sort of questions taken as an input promt to return accurate answers. The backing is running on splitted pipelines of *Pytorch* with *OnnX*. And last but not least, all these datas shall be stored in the user dashboard utilizing which, the machine can automatically recommend more similar papers via *cosine similarity*.
 
-![image](https://user-images.githubusercontent.com/48355572/204152389-611e1a27-c8b1-47a3-a73e-7f27d5f50cf9.png)
+![image](https://user-images.githubusercontent.com/48355572/204158922-55639267-91c6-4a2a-ae04-c516c9448236.png)
 
 ---
 
