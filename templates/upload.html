@@ -15,7 +15,7 @@
       <nav class="my-2 my-md-0 mr-md-3">
         <a class="p-2 text-light" href="http://127.0.0.1:5000/">Home</a>
         <a class="p-2 text-light" href="http://127.0.0.1:5000/uploadPage">Upload</a>
-        <a class="p-2 text-light" href="http://127.0.0.1:5000/summaryPage">Summary</a>
+        <!-- <a class="p-2 text-light" href="http://127.0.0.1:5000/summaryPage">Summary</a> -->
         <a class="p-2 text-light" href="http://127.0.0.1:5000/signUpPage">Sign Up</a>
         
       </nav>
@@ -70,9 +70,11 @@
   <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 
   {% for link in links2%}
+  <a href="http://127.0.0.1:5000/paperResults"></a>
     <div class="column-card">
-      <div class="search-card"><a href="http://127.0.0.1:5000/paperResults"><iframe width="320" height="475" src={{link}} frameborder="0"  allowfullscreen></iframe></a></div>
+      <div class="search-card"><iframe width="320" height="475" src={{link}} frameborder="0"  allowfullscreen></iframe></div>
     </div>
+  </a>
   {% endfor %}
  
 </div>

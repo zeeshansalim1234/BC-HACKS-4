@@ -18,7 +18,7 @@
       <nav class="my-2 my-md-0 mr-md-3">
         <a class="p-2 text-light" href="http://127.0.0.1:5000/">Home</a>
         <a class="p-2 text-light" href="http://127.0.0.1:5000/uploadPage">Upload</a>
-        <a class="p-2 text-light" href="http://127.0.0.1:5000/summaryPage">Summary</a>
+        <!-- <a class="p-2 text-light" href="http://127.0.0.1:5000/summaryPage">Summary</a> -->
         <a class="p-2 text-light" href="http://127.0.0.1:5000/signUpPage">Sign Up</a>
         
       </nav>
@@ -34,31 +34,31 @@
                 <h5 class="card-title">ORIGINAL DOCUMENT</h5>
                 
                 
-                <p><b><h6 style="padding-top: 10px;">Abstract</h6></b>This paper introduces STEM and LAMB, embeddings trained for stems and lemmata instead of for surface forms. For morphologically rich languages, they perform significantly better than standard embeddings on
+                <p><b><h6 style="padding-top: 10px;">Abstract</h6></b>This paper introduces <a href="#">STEM</a> and <a href="#">LAMB</a>, embeddings trained for stems and lemmata instead of for surface forms. For morphologically rich languages, they perform significantly better than standard embeddings on
                   word similarity and polarity evaluations. On
-                  a new WordNet-based evaluation, STEM and
+                  a new <a href="#">WordNet</a>-based evaluation, STEM and
                   LAMB are up to 50% better than standard embeddings. We show that both embeddings
-                  have high quality even for small dimensionality and training corpora.
+                  have high quality even for small dimensionality and <a href="#">training corpora</a>.
                   <h6 style="padding-top: 10px;"><b>Introduction</b></h6>
                   
-                  Despite their power and prevalence, embeddings,
+                  Despite their power and prevalence, <a href="#">embeddings</a>,
                   i.e., (low-dimensional) word representations in vector space, have serious practical problems. First,
                   large text corpora are necessary to train high-quality
                   embeddings. Such corpora are not available for underresourced languages. Second, morphologically
                   rich languages (MRLs) are a challenge for standard embedding models because many inflectional
-                  forms are rare or absent even in a large corpus. For
+                  forms are rare or absent even in a large <a href="http://127.0.0.1:5000/definition1">corpus</a>. For
                   example, a Spanish verb has more than 50 forms,
                   many of which are rarely used. This leads to missing or low quality embeddings for such inflectional
                   forms, even for otherwise frequent verbs, i.e., sparsity is a problem. Therefore, we propose to compute normalized embeddings instead of embeddings
                   for surface/inflectional forms (referred to as forms
-                  throughout the rest of the paper): STem EMbeddings (STEM) for word stems and LemmA eMBeddings (LAMB) for lemmata.
+                  throughout the rest of the paper): <a href="#">STem EMbeddings</a> (STEM) for word stems and LemmA eMBeddings (LAMB) for lemmata.
                   Stemming is a heuristic approach to reducing
                   form-related sparsity issues. Based on simple rules,
                   forms are converted into their stem.1 However, often
                   the forms of one word are converted into several different stems. For example, present indicative forms
                   of the German verb “brechen” (to break) are mapped
                   to four different stems (“brech”, “brich”, “bricht”,
-                  “brecht”). A more principled solution is lemmatization. Lemmatization unites many individual forms,
+                  “brecht”). A more principled solution is <a href="http://127.0.0.1:5000/definition2">lemmatization</a>. Lemmatization unites many individual forms,
                   many of which are rare, in one equivalence class,
                   represented by a single lemma. Stems and equivalence classes are more frequent than each individual
                   form. As we will show, this successfully addresses
@@ -66,24 +66,24 @@
                   
                   
                   Both methods can learn high-quality semantic
-                  representations for rare forms and thus are most beneficial for MRLs as we show below. Moreover, less
+                  representations for rare forms and thus are most beneficial for <a href="#">MRLs</a> as we show below. Moreover, less
                   training data is required to train lemma embeddings
                   of the same quality as form embeddings. Alternatively, we can train lemma embeddings that have the
                   same quality but fewer dimensions than form embeddings, resulting in more efficient applications.
-                  If an application such as parsing requires inflectional information, then stem and lemma embeddings may not be a good choice since they
+                  If an application such as parsing requires inflectional information, then stem and <a href="#">lemma</a> embeddings may not be a good choice since they
                   do not contain such information. 
                   
                   However, NLP
                   applications such as similarity benchmarks (e.g.,
                   MEN (Bruni et al., 2014)) and (as we show below)
-                  polarity classification are semantic and are largely independent of inflectional morphology. Our contributions are the following. (i) We introduce the normalized embeddings STEM and LAMB
+                  polarity classification are semantic and are largely independent of <a href="#">inflectional morphology</a>. Our contributions are the following. (i) We introduce the normalized embeddings STEM and LAMB
                   and show their usefulness on different tasks for five
                   languages. 
                   <h6 style="padding-top: 10px;"><b>Conclusion</b></h6>
-                  This paper is the first study that comprehensively compares stem/lemma-based with formbased embeddings for MRLs. (ii) We show the advantage of normalization on word similarity benchmarks. Normalized embeddings yield better performance for MRL languages on most datasets (6 out
+                  This paper is the first study that comprehensively compares <a href="#">stem/lemma-based</a> with formbased embeddings for MRLs. (ii) We show the advantage of normalization on word similarity benchmarks. Normalized embeddings yield better performance for MRL languages on most datasets (6 out
                   of 7 datasets for German and 2 out of 2 datasets for
                   Spanish). (iii) We propose a new intrinsic relatedness evaluation based on WordNet graphs and publish datasets for five languages. On this new evaluation, LAMB outperforms form-based baselines by a
-                  big margin. (iv) STEM and LAMB outperform baselines on polarity classification for Czech and English. (v) We show that LAMB embeddings are efficient in that they are high-quality for small training
+                  big margin. (iv) STEM and LAMB outperform baselines on polarity classification for <a href="#">Czech</a> and English. (v) We show that LAMB embeddings are efficient in that they are high-quality for small training
                   corpora and small dimensionalities.
                   
               We have presented STEM and LAMB, embeddings
@@ -91,7 +91,7 @@ based on stems and lemmata. In three experiments
 we have shown the superiority compared to commonly used form embeddings. Especially (but not
 only) on MRLs, where data sparsity is a problem,
 both normalized embeddings perform better than
-form embeddings by a large margin. In a new challenging WordNet-based experiment we have shown
+form embeddings by a large margin. In a new challenging <a href="#">WordNet-based</a> experiment we have shown
 four methods of adding morphological information
                   
                   
@@ -120,23 +120,6 @@ four methods of adding morphological information
 
 
 
-        <div style class="card mb-3">
-          <div class="card-body">
-              <h5 class="card-title" style="display:inline">SUMMARIZE</h5> 
-              
-              <button onclick="window.location.href = 'getSummary';" type="button" style = "border-radius: 15px; float: right;">Full Paper</button> 
-              <br> <br>  
-
-              <textarea id="inp" class="form-control" placeholder="Enter Text ..." style="border-radius: 15px;"></textarea> 
-              <br> 
-              <button class="submit" id="button" style = "border-radius: 15px; margin-bottom: 20px;">Summarize</button>           
-              
-              <div class="msg_board"></div>
-              <!-- <span id="answer" class="text-muted"></span> -->
-          </div>
-      </div>
-
-
       {% if title %}
       <div style class="card mb-3">
         <div class="card-body">
@@ -149,6 +132,35 @@ four methods of adding morphological information
         </div>
     </div>
     {% endif %}
+
+    {% if title2 %}
+      <div style class="card mb-3">
+        <div class="card-body">
+            <h5 class="card-title" style="color: blue;">{{ title2 }} - (Definition)</h5>
+            <br>
+            <p>
+              {{ content2 }}
+            </p>
+            <span id="answer3" class="text-muted"></span>
+        </div>
+    </div>
+    {% endif %}
+
+    <div style class="card mb-3">
+      <div class="card-body">
+          <h5 class="card-title" style="display:inline">SUMMARIZE</h5> 
+          
+          <button onclick="window.location.href = 'getSummary';" type="button" style = "border-radius: 15px; float: right;">Full Paper</button> 
+          <br> <br>  
+
+          <textarea id="inp" class="form-control" placeholder="Enter Text ..." style="border-radius: 15px;"></textarea> 
+          <br> 
+          <button class="submit" id="button" style = "border-radius: 15px; margin-bottom: 20px;">Summarize</button>           
+          
+          <div class="msg_board"></div>
+          <!-- <span id="answer" class="text-muted"></span> -->
+      </div>
+  </div>
 
 
       </div>

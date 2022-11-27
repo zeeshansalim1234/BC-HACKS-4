@@ -18,10 +18,16 @@ db = firestore.client()
 input = """For morphologically rich languages STEM and LAMB, perform significantly better than standard embeddings on word similarity and polarity evaluations. On a new WordNet-based evaluation, STEM and
 LAMB are up to 50% better than standard embeddings. """
 links = ["http://aclweb.org/anthology/D18-1291.pdf", "http://aclweb.org/anthology/D18-1047.pdf", "http://aclweb.org/anthology/D18-1059.pdf"]
-set_answers = ["answer1", "answer2"]
-set_questions = ["question1", "question2"]
+set_answers = [" embeddings, i.e., (low-dimensional) word representations in vector space, have serious practical problems. First, large text corpora are necessary to train high-quality embeddings. Such corpora are not available for underresourced languages. Second, morphologically rich languages (MRLs) are a challenge for standard embedding models because many inflectional forms are rare or absent even in a large corpus.", "WordNet-based evaluation, STEM and LAMB are up to 50% better than standard embeddings."]
+set_questions = ["Why should I use LAMB?", "How good is STEM and LAMB in contrast to standard embeddings?"]
 question_answer = []
 counter = -1
+
+title = "corpus"
+content = "A corpus is a collection of authentic text or audio organized into datasets. Authentic here means text written or audio spoken by a native of the language or dialect."
+title2 = "lemmatization"
+content2 = "Lemmatization is the grouping together of different forms of the same word. In search queries, lemmatization allows end users to query any version of a base word and get relevant results."
+
 
 @app.route('/', methods = ['GET'])
 def home():
@@ -37,8 +43,8 @@ def upload():
 
 @app.route('/searchPapers',  methods = ['GET'])
 def searchPapers():
-    links1 = ["http://aclweb.org/anthology/D18-1291.pdf", "http://aclweb.org/anthology/D18-1047.pdf", "http://aclweb.org/anthology/D18-1059.pdf"]
-    links2 = ["http://aclweb.org/anthology/D18-1344.pdf", "http://aclweb.org/anthology/D16-1071.pdf", "http://aclweb.org/anthology/D18-1482.pdf"]
+    links1 = ["http://aclweb.org/anthology/D18-1291.pdf", "http://aclweb.org/anthology/D16-1071.pdf", "http://aclweb.org/anthology/D18-1059.pdf"]
+    links2 = ["http://aclweb.org/anthology/D18-1344.pdf", "http://aclweb.org/anthology/D16-1047.pdf", "http://aclweb.org/anthology/D18-1482.pdf"]
     return render_template('upload.html', links1 = links1, links2 = links2)
 
 @app.route('/summaryPage',  methods = ['GET'])
@@ -58,10 +64,14 @@ def dashboard():
 
 @app.route('/definition1',  methods = ['GET'])
 def definition1():
-    links = ["http://aclweb.org/anthology/D18-1291.pdf", "http://aclweb.org/anthology/D18-1047.pdf", "http://aclweb.org/anthology/D18-1059.pdf"]
-    title = "Mercury"
-    content = "Mercury is the smallest and fastest planet in the solar system. It is also the closest planet to the sun. It is named after the Roman messenger god Mercury, the fastest Roman god. The planet Mercury was known by ancient people thousands of years ago."
-    return render_template('summary.html', links = links, title = title, content = content, summary = input)
+    # links = ["http://aclweb.org/anthology/D18-1291.pdf", "http://aclweb.org/anthology/D18-1047.pdf", "http://aclweb.org/anthology/D18-1059.pdf"]
+    return render_template('summary.html',title=title, content = content)
+
+@app.route('/definition2',  methods = ['GET'])
+def definition2():
+    # links = ["http://aclweb.org/anthology/D18-1291.pdf", "http://aclweb.org/anthology/D18-1047.pdf", "http://aclweb.org/anthology/D18-1059.pdf"]
+    
+    return render_template('summary.html',title=title, content = content,title2=title2, content2 = content2)
 
 @app.route('/login', methods = ['GET'])
 def login():
@@ -74,14 +84,12 @@ def question():
     global counter
     counter+=1
     question_answer.append((set_questions[counter],set_answers[counter]))
-    return render_template('summary.html', question_answers = question_answer)
+    return render_template('summary.html', question_answers = question_answer, summary = input, links = links, title=title, content = content,title2=title2, content2 = content2)
 
 @app.route('/getSummary', methods = ['GET'])
 def getSummary():
-    input = """For morphologically rich languages STEM and LAMB, perform significantly better than standard embeddings on word similarity and polarity evaluations. On a new WordNet-based evaluation, STEM and
-LAMB are up to 50% better than standard embeddings. """
-    links = ["http://aclweb.org/anthology/D18-1291.pdf", "http://aclweb.org/anthology/D18-1047.pdf", "http://aclweb.org/anthology/D18-1059.pdf"]
-    return render_template('summary.html', summary = input, links = links)
+    
+    return render_template('summary.html', summary = input, links = links, title=title, content = content,title2=title2, content2 = content2)
 
 @app.route('/tags', methods = ['POST'])
 def tags():
