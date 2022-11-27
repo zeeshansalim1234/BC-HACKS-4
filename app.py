@@ -38,6 +38,25 @@ def tags():
     language = "en"
     document = {"content": text_content, "type_": type_, "language": language}
 
+    content_categories_version = (
+        language_v1.ClassificationModelOptions.V2Model.ContentCategoriesVersion.V2)
+    response = client.classify_text(request = {
+        "document": document,
+        "classification_model_options": {
+            "v2_model": {
+                "content_categories_version": content_categories_version
+            }
+        }
+    })
+    
+    category = response.categories[0].name
+    category = category.replace('/Other', '')
+    categories = category.split("/")
+
+    for elem in categories:
+        if len(elem) < 1:
+            categories.remove(elem)
+
     # Available values: NONE, UTF8, UTF16, UTF32
     encoding_type = language_v1.EncodingType.UTF8
 
@@ -50,11 +69,11 @@ def tags():
         
         for mention in entity.mentions:
 
-            if language_v1.Entity.Type(entity.type_).name != "OTHER":       
+            if language_v1.Entity.Type(entity.type_).name != "OTHER" and language_v1.Entity.Type(entity.type_).name != "NUMBER":       
                 result.append(mention.text.content)
 
     result = list(set(result))
-    return jsonify(result), 200
+    return jsonify({'tags':result, 'categories':categories}), 200
 
 
 @app.route('/recommendations', methods = ['POST'])
