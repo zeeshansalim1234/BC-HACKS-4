@@ -15,6 +15,8 @@ initialize_app(cred)
 db = firestore.client()
 #user_Ref = db.collection('research')  
 
+input = """Mercury The smallest planet in our solar system is Mercury, which is also closest to the Sun. The geological features of Mercury consist of lobed ridges and impact craters. Being closest to the Sun the Mercury’s temperature sores extremely high during the day time. Mercury can go as high as 450 degree Celsius but surprisingly the nights here are freezing cold. Mercury has a diameter of 4,878 km and Mercury does not have any natural satellite like Earth. Venus Venus is also said to be the hottest planet of our solar system. It has a toxic atmosphere that always traps heat. Venus is also the brightest planet and it is visible to the naked eye. Venus has a thick silicate layer around an iron core which is also similar to that of Earth."""
+
 links = ["http://aclweb.org/anthology/D18-1291.pdf", "http://aclweb.org/anthology/D18-1047.pdf", "http://aclweb.org/anthology/D18-1059.pdf"]
 
 @app.route('/', methods = ['GET'])
@@ -53,7 +55,7 @@ def definition1():
     links = ["http://aclweb.org/anthology/D18-1291.pdf", "http://aclweb.org/anthology/D18-1047.pdf", "http://aclweb.org/anthology/D18-1059.pdf"]
     title = "Mercury"
     content = "Mercury is the smallest and fastest planet in the solar system. It is also the closest planet to the sun. It is named after the Roman messenger god Mercury, the fastest Roman god. The planet Mercury was known by ancient people thousands of years ago."
-    return render_template('summary.html', links = links, title = title, content = content)
+    return render_template('summary.html', links = links, title = title, content = content, summary = input)
 
 @app.route('/login', methods = ['GET'])
 def login():
