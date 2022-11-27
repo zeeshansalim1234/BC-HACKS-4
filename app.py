@@ -23,13 +23,13 @@ def home():
 def signUpPage():
     return render_template('account.html')
 
-@app.route('/uploadPage',  methods = ['POST'])
+@app.route('/uploadPage',  methods = ['GET'])
 def upload():
     return render_template('upload.html')
 
-@app.route('/summaryPage',  methods = ['POST'])
+@app.route('/summaryPage',  methods = ['GET'])
 def summaryPage():
-    return render_template('summaryPage.html')
+    return render_template('summary.html')
 
 @app.route('/dashboardPage',  methods = ['GET'])
 def dashboard():
