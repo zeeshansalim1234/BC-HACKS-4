@@ -5,6 +5,7 @@ import pickle
 import json
 import torch
 from sentence_transformers import SentenceTransformer, util
+from google.cloud import language 
 
 app = Flask(__name__)
 CORS(app)
@@ -19,6 +20,9 @@ def home():
 
     return jsonify({'message': "Hello World"}), 200
 
+@app.route('/tags', methods = ['POST'])
+def tags():
+    pass 
 
 @app.route('/recommendations', methods = ['POST'])
 def recommendations():
