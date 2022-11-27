@@ -8,7 +8,7 @@ CORS(app)
 cred = credentials.Certificate("key.json")
 initialize_app(cred)
 db = firestore.client()
-#user_Ref = db.collection('research') 
+#user_Ref = db.collection('research')  
 
 @app.route('/', methods = ['GET'])
 def home():
