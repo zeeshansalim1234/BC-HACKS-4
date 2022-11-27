@@ -126,7 +126,7 @@
 
             <div class="input-group mb-3 mt-3" >
                 <input type="text" class="inppx form-control" placeholder="Enter your question ..." id="question">
-                <button id="button" class="submitz">
+                <button id="button" onclick="window.location.href = 'question';" class="submitz" >
                     Submit
                 </button>
             </div>
@@ -139,26 +139,20 @@
             </div>
               
         </div>
+        
+        {% for question,answer in question_answers %}
         <div class="card mb-3">
             <div class="card-body">
                 <h5 class="card-title">Question</h5>
-                <p> What is Uranus?</p>
+                <p>{{question}}</p>
                 
                 <h5 class="card-title">Answer</h5>
-                <p> Uranus is the seventh planet from the Sun. It is the lightest of all the giant and outer planets.</p>
+                <p> {{answer}}</p>
                 <span id="answer1" class="text-muted"></span>
             </div>
         </div>
-        <div class="card mb-3">
-          <div class="card-body">
-              <h5 class="card-title">Question</h5>
-              <p> Why am I a software engineer ?</p>
-           
-              <h5 class="card-title">Answer</h5>
-              <p> Uranus is the seventh planet from the Sun. It is the lightest of all the giant and outer planets.</p>
-              <span id="answer2" class="text-muted"></span>
-          </div>
-      </div>
+        {% endfor %}
+
       </div>
 
 
