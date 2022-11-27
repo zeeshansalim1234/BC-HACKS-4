@@ -53,6 +53,7 @@ def tags():
             if language_v1.Entity.Type(entity.type_).name != "OTHER":       
                 result.append(mention.text.content)
 
+    result = list(set(result))
     return jsonify(result), 200
 
 
