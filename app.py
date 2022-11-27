@@ -17,8 +17,11 @@ db = firestore.client()
 
 @app.route('/', methods = ['GET'])
 def home():
+    return render_template('index.html')
 
-    return jsonify({'message': "Hello World"}), 200
+@app.route('/signUpPage',  methods = ['GET'])
+def signUpPage():
+    return render_template('account.html')
 
 @app.route('/tags', methods = ['POST'])
 def tags():
