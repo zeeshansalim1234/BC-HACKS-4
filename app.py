@@ -5,7 +5,7 @@ import pickle
 import json
 import torch
 from sentence_transformers import SentenceTransformer, util
-from google.cloud import language 
+from google.cloud import language_v1 
 
 app = Flask(__name__)
 CORS(app)
@@ -22,7 +22,39 @@ def home():
 
 @app.route('/tags', methods = ['POST'])
 def tags():
-    pass 
+
+    text_content = request.json['content']
+
+    client = language_v1.LanguageServiceClient()
+
+    # text_content = 'California is a state.'
+
+    # Available types: PLAIN_TEXT, HTML
+    type_ = language_v1.Document.Type.PLAIN_TEXT
+
+    # Optional. If not specified, the language is automatically detected.
+    # For list of supported languages:
+    # https://cloud.google.com/natural-language/docs/languages
+    language = "en"
+    document = {"content": text_content, "type_": type_, "language": language}
+
+    # Available values: NONE, UTF8, UTF16, UTF32
+    encoding_type = language_v1.EncodingType.UTF8
+
+    response = client.analyze_entities(request = {'document': document, 'encoding_type': encoding_type})
+
+    result = []
+
+    # Loop through entitites returned from the API
+    for entity in response.entities:
+        
+        for mention in entity.mentions:
+
+            if language_v1.Entity.Type(entity.type_).name != "OTHER":       
+                result.append(mention.text.content)
+
+    return jsonify(result), 200
+
 
 @app.route('/recommendations', methods = ['POST'])
 def recommendations():
