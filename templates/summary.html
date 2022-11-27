@@ -32,36 +32,68 @@
      <div style class="card mb-3">
             <div class="card-body">
                 <h5 class="card-title">ORIGINAL DOCUMENT</h5>
-                <br>
-                <p>Mercury
-                  The smallest planet in our solar system is
-                  <a href = "http://127.0.0.1:5000/definition1">Mercury</a>, which is also closest to the Sun. The geological features of Mercury consist of lobed ridges and impact craters. Being closest to the Sun the Mercury’s temperature sores extremely high during the day time. Mercury can go as high as 450 degree Celsius but surprisingly the nights here are freezing cold. Mercury has a diameter of 4,878 km and Mercury does not have any natural satellite like Earth.
+                
+                
+                <p><b><h6 style="padding-top: 10px;">Abstract</h6></b>This paper introduces STEM and LAMB, embeddings trained for stems and lemmata instead of for surface forms. For morphologically rich languages, they perform significantly better than standard embeddings on
+                  word similarity and polarity evaluations. On
+                  a new WordNet-based evaluation, STEM and
+                  LAMB are up to 50% better than standard embeddings. We show that both embeddings
+                  have high quality even for small dimensionality and training corpora.
+                  <h6 style="padding-top: 10px;"><b>Introduction</b></h6>
                   
-                  Venus
-                  Venus is also said to be the hottest planet of our solar system. It has a toxic atmosphere that always traps heat. Venus is also the brightest planet and it is visible to the naked eye. Venus has a thick silicate layer around an iron core which is also similar to that of Earth. Astronomers have seen traces of internal geological activity on Venus planet. Venus has a diameter of 12,104 km and it is just like Mars. Venus also does not have any natural satellite like Earth.
+                  Despite their power and prevalence, embeddings,
+                  i.e., (low-dimensional) word representations in vector space, have serious practical problems. First,
+                  large text corpora are necessary to train high-quality
+                  embeddings. Such corpora are not available for underresourced languages. Second, morphologically
+                  rich languages (MRLs) are a challenge for standard embedding models because many inflectional
+                  forms are rare or absent even in a large corpus. For
+                  example, a Spanish verb has more than 50 forms,
+                  many of which are rarely used. This leads to missing or low quality embeddings for such inflectional
+                  forms, even for otherwise frequent verbs, i.e., sparsity is a problem. Therefore, we propose to compute normalized embeddings instead of embeddings
+                  for surface/inflectional forms (referred to as forms
+                  throughout the rest of the paper): STem EMbeddings (STEM) for word stems and LemmA eMBeddings (LAMB) for lemmata.
+                  Stemming is a heuristic approach to reducing
+                  form-related sparsity issues. Based on simple rules,
+                  forms are converted into their stem.1 However, often
+                  the forms of one word are converted into several different stems. For example, present indicative forms
+                  of the German verb “brechen” (to break) are mapped
+                  to four different stems (“brech”, “brich”, “bricht”,
+                  “brecht”). A more principled solution is lemmatization. Lemmatization unites many individual forms,
+                  many of which are rare, in one equivalence class,
+                  represented by a single lemma. Stems and equivalence classes are more frequent than each individual
+                  form. As we will show, this successfully addresses
+                  the sparsity issue.
                   
-                  Earth
-                  Earth is the largest inner planet. It is covered two-third with water. Earth is the only planet in our solar system where life is possible. Earth’s atmosphere which is rich in nitrogen and oxygen makes it fit for the survival of various species of flora and fauna. However human activities are negatively impacting its atmosphere. Earth has a diameter of 12,760 km and Earth has one natural satellite that is the moon.
                   
-                  Get the huge list of more than 500 Essay Topics and Ideas
+                  Both methods can learn high-quality semantic
+                  representations for rare forms and thus are most beneficial for MRLs as we show below. Moreover, less
+                  training data is required to train lemma embeddings
+                  of the same quality as form embeddings. Alternatively, we can train lemma embeddings that have the
+                  same quality but fewer dimensions than form embeddings, resulting in more efficient applications.
+                  If an application such as parsing requires inflectional information, then stem and lemma embeddings may not be a good choice since they
+                  do not contain such information. 
                   
-                  Mars
-                  Mars is the fourth planet from the Sun and it is often referred to as the Red Planet. This planet has a reddish appeal because of the iron oxide present on this planet. Mars planet is a cold planet and it has geological features similar to that of Earth. This is the only reason why it has captured the interest of astronomers like no other planet. This planet has traces of frozen ice caps and it has been found on the planet. Mars has a diameter of 6,787 km and it has two natural satellites.
+                  However, NLP
+                  applications such as similarity benchmarks (e.g.,
+                  MEN (Bruni et al., 2014)) and (as we show below)
+                  polarity classification are semantic and are largely independent of inflectional morphology. Our contributions are the following. (i) We introduce the normalized embeddings STEM and LAMB
+                  and show their usefulness on different tasks for five
+                  languages. 
+                  <h6 style="padding-top: 10px;"><b>Conclusion</b></h6>
+                  This paper is the first study that comprehensively compares stem/lemma-based with formbased embeddings for MRLs. (ii) We show the advantage of normalization on word similarity benchmarks. Normalized embeddings yield better performance for MRL languages on most datasets (6 out
+                  of 7 datasets for German and 2 out of 2 datasets for
+                  Spanish). (iii) We propose a new intrinsic relatedness evaluation based on WordNet graphs and publish datasets for five languages. On this new evaluation, LAMB outperforms form-based baselines by a
+                  big margin. (iv) STEM and LAMB outperform baselines on polarity classification for Czech and English. (v) We show that LAMB embeddings are efficient in that they are high-quality for small training
+                  corpora and small dimensionalities.
                   
-                  Jupiter
-                  It is the largest planet in our solar system. Jupiter has a strong magnetic field. Jupiter largely consists of helium and hydrogen. It has a Great Red Spot and cloud bands. The giant storm is believed to have raged here for hundreds of years. Jupiter has a diameter of 139,822 km and it has as many as 79 natural satellites which are much more than of Earth and Mars.
+              We have presented STEM and LAMB, embeddings
+based on stems and lemmata. In three experiments
+we have shown the superiority compared to commonly used form embeddings. Especially (but not
+only) on MRLs, where data sparsity is a problem,
+both normalized embeddings perform better than
+form embeddings by a large margin. In a new challenging WordNet-based experiment we have shown
+four methods of adding morphological information
                   
-                  Saturn
-                  Saturn is the sixth planet from the Sun. It is also known for its ring system and these rings are made of tiny particles of ice and rock. Saturn’s atmosphere is quite like that of Jupiter because it is also largely composed of hydrogen and helium. Saturn has a diameter of 120,500 km and It has 62 natural satellites that are mainly composed of ice. As compare with Jupiter it has less satellite.
-                  
-                  Uranus
-                  Uranus is the seventh planet from the Sun. It is the lightest of all the giant and outer planets. Presence of Methane in the atmosphere this Uranus planet has a blue tint. Uranus core is colder than the other giant planets and the planet orbits on its side. Uranus has a diameter of 51,120 km and it has 27 natural satellites.
-                  
-                  Neptune
-                  Neptune is the last planet in our solar system. It is also the coldest of all the planets. Neptune is around the same size as the Uranus. And it is much more massive and dense. Neptune’s atmosphere is composed of helium, hydrogen, methane, and ammonia and it experiences extremely strong winds. It is the only planet in our solar system which is found by mathematical prediction. Neptune has a diameter of 49,530 km and it has 14 natural satellites which are more than of Earth and Mars.
-                  
-                  Conclusion
-                  Scientists and astronomers have been studying our solar system for centuries and then after they will findings are quite interesting. Various planets that form a part of our solar system have their own unique geological features and all are different from each other in several ways.
                   
                   </p>
                 <span id="answer6" class="text-muted"></span>
@@ -76,7 +108,7 @@
         {% if summary %}
         <div style class="card mb-3">
           <div class="card-body">
-              <h5 class="card-title">OVERALL SUMMARY</h5>
+              <h5 class="card-title">TL;DR SUMMARY</h5>
               <br>
               <p>
                 {{ summary }}

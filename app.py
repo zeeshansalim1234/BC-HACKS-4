@@ -15,7 +15,8 @@ initialize_app(cred)
 db = firestore.client()
 #user_Ref = db.collection('research')  
 
-input = """Mercury The smallest planet in our solar system is Mercury, which is also closest to the Sun. The geological features of Mercury consist of lobed ridges and impact craters. Being closest to the Sun the Mercury’s temperature sores extremely high during the day time. Mercury can go as high as 450 degree Celsius but surprisingly the nights here are freezing cold. Mercury has a diameter of 4,878 km and Mercury does not have any natural satellite like Earth. Venus Venus is also said to be the hottest planet of our solar system. It has a toxic atmosphere that always traps heat. Venus is also the brightest planet and it is visible to the naked eye. Venus has a thick silicate layer around an iron core which is also similar to that of Earth."""
+input = """For morphologically rich languages STEM and LAMB, perform significantly better than standard embeddings on word similarity and polarity evaluations. On a new WordNet-based evaluation, STEM and
+LAMB are up to 50% better than standard embeddings. """
 links = ["http://aclweb.org/anthology/D18-1291.pdf", "http://aclweb.org/anthology/D18-1047.pdf", "http://aclweb.org/anthology/D18-1059.pdf"]
 set_answers = ["answer1", "answer2"]
 set_questions = ["question1", "question2"]
@@ -77,7 +78,8 @@ def question():
 
 @app.route('/getSummary', methods = ['GET'])
 def getSummary():
-    input = """Mercury The smallest planet in our solar system is Mercury, which is also closest to the Sun. The geological features of Mercury consist of lobed ridges and impact craters. Being closest to the Sun the Mercury’s temperature sores extremely high during the day time. Mercury can go as high as 450 degree Celsius but surprisingly the nights here are freezing cold. Mercury has a diameter of 4,878 km and Mercury does not have any natural satellite like Earth. Venus Venus is also said to be the hottest planet of our solar system. It has a toxic atmosphere that always traps heat. Venus is also the brightest planet and it is visible to the naked eye. Venus has a thick silicate layer around an iron core which is also similar to that of Earth."""
+    input = """For morphologically rich languages STEM and LAMB, perform significantly better than standard embeddings on word similarity and polarity evaluations. On a new WordNet-based evaluation, STEM and
+LAMB are up to 50% better than standard embeddings. """
     links = ["http://aclweb.org/anthology/D18-1291.pdf", "http://aclweb.org/anthology/D18-1047.pdf", "http://aclweb.org/anthology/D18-1059.pdf"]
     return render_template('summary.html', summary = input, links = links)
 
