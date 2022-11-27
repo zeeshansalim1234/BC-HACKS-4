@@ -48,8 +48,11 @@ def tags():
             }
         }
     })
-    
-    category = response.categories[0].name
+
+    category = ""
+    for elem in response.categories:
+        category+=elem.name
+
     category = category.replace('/Other', '')
     categories = category.split("/")
 
@@ -73,6 +76,7 @@ def tags():
                 result.append(mention.text.content)
 
     result = list(set(result))
+    categories = list(set(categories))
     return jsonify({'tags':result, 'categories':categories}), 200
 
 
